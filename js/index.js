@@ -1,10 +1,10 @@
 // Your code goes here
 
 // 1 'wheel'
-const bodyStyle = document.querySelector('body');
+const content = document.querySelector('.content-pick');
 
-bodyStyle.addEventListener('wheel', e => {
-        e.target.style.backgroundColor = '#DEECF2';});
+content.addEventListener('wheel', e => {
+        e.currentTarget.style.backgroundColor = '#DEECF2';});
 // console.log(bodyStyle);
 
 // 2 & 3 'mouseenter', 'mouseleave'
