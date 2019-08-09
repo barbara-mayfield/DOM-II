@@ -2,21 +2,25 @@
 
 // 1 'wheel'
 const content = document.querySelector('.content-pick');
-
 content.addEventListener('wheel', e => {
         e.currentTarget.style.backgroundColor = '#DEECF2';});
-// console.log(bodyStyle);
+// console.log(content);
 
 // 2 & 3 'mouseenter', 'mouseleave'
 const navTags = Array.from(document.getElementsByClassName('nav-link'));
 navTags.forEach(function(navTags){
-        navTags.addEventListener('mouseenter', e => {
-            e.target.style.color = 'goldenrod'
-        });
-        navTags.addEventListener('mouseleave', e => {
-            e.target.style.color = 'black'
-        });
-    });
+    navTags.addEventListener('mouseenter', e => {
+        e.target.style.color = 'goldenrod'});
+    navTags.addEventListener('mouseleave', e => {
+        e.target.style.color = 'black'});
+});
+
+const aTag = Array.from(document.querySelectorAll('a'));
+aTag.forEach(function(aTag){
+    aTag.addEventListener('click', e => {
+        e.preventDefault();
+        e.target.style.color = 'red';});
+});
 
 // 4 & 5 'mouseover', 'mousewheel'
 const images = Array.from(document.getElementsByTagName('img'));
