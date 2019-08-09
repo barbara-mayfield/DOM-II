@@ -1,10 +1,10 @@
 // Your code goes here
 
 // 1 'wheel'
-const bodyStyle = document.getElementsByTagName('body');
-for (var i = 0 ; i < bodyStyle.length; i++) {
-    bodyStyle[i].addEventListener('wheel', e => {e.target.style.backgroundColor = '#DEECF2';});
- }
+const bodyStyle = document.querySelector('body');
+
+bodyStyle.addEventListener('wheel', e => {
+        e.target.style.backgroundColor = '#DEECF2';});
 // console.log(bodyStyle);
 
 // 2 & 3 'mouseenter', 'mouseleave'
@@ -43,14 +43,8 @@ funBusImg.addEventListener('dblclick', e => {
     e.target.style.opacity = '0.8'});
 // console.log(funBusImg);
 
-const dontDoItP = document.createElement('p');
-dontDoItP.textContent = `Don't drag the car!`;
-dontDoItP.style.font = '"Times New Roman", Times, Serif';
-dontDoItP.style.fontStyle = 'italic';
-dontDoItP.style.marginLeft = '42%';
-document.querySelector('.intro h2').prepend(dontDoItP);
-
 // 9 'click'
+
 const buttonStyle = document.querySelectorAll('.btn');
 buttonStyle.forEach(function(buttonStyle){
     buttonStyle.addEventListener('click', e => {
@@ -71,22 +65,32 @@ logoStyle.addEventListener('mousedown', e => {
 
 // Extra Work
 
+document.addEventListener('keydown', (e) => {
+    if(event.key === 'f') {
+      alert('Thank You');
+    }
+  })
+
+const payRespects = document.createElement('p');
+payRespects.textContent = `Press F to Pay Respects`;
+payRespects.style.font = '"Times New Roman", Times, Serif';
+payRespects.style.fontStyle = 'italic';
+payRespects.style.marginLeft = '38%';
+document.querySelector('.intro h2').prepend(payRespects);
+
 var navButton = document.createElement('button'), count = 0;
-document.querySelector('.home .intro').prepend(navButton);
+document.querySelector('.footer').prepend(navButton);
 navButton.style.width = '15rem';
 navButton.style.height = '2rem';
 navButton.style.marginTop = '2rem';
 navButton.style.marginRight = '38rem';
 navButton.style.marginBottom = '2rem';
-navButton.style.marginLeft = '32rem';
+navButton.style.marginLeft = '48rem';
 navButton.style.textAlign = 'center';
 navButton.addEventListener('click', (e) => {
     count += 1;
     navButton.textContent = "Click Count:" + count;
 });
-
-navButton.addEventListener('mousemove');
-
 
 const navStyle = document.querySelector('.main-navigation');
 console.log(navStyle);
